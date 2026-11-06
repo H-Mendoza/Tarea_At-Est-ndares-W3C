@@ -1,107 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Horario de clases | Mi primer web</title>
+    <link rel="stylesheet" href="Estilo.css">
+    <script src="codigo.js" defer></script>
 </head>
 <body>
-    <table>
-        <caption> tabla sencilla </caption>
-        <tr>
-            <td>HORAS </td>
-            <th>LUNES  </th>
-            <th>MARTES</th>
-            <th>MIERCOLES</th>
-            <th>JUEVES</th>
-            <th>VIERNES</th>
-        </tr>
-        <tr>
-            <td>7:00 </td>
-            <th>Algoritmo y estructura de datos </th>
-            <th>  </th>
-            <th>Algoritmo y estructura de datos </th>
-            <th>Disarrollo Basado en Plataforma </th>
-            <th>  </th>
-        </tr>
-
-        <tr>
-            <td>8:00 </td>
-            <th>Algoritmo y estructura de datos </th>
-            <th>  </th>
-            <th>Algoritmo y estructura de datos </th>
-            <th>Disarrollo Basado en Plataforma </th>
-            <th>  </th>
-        </tr>
-
-        <tr>
-            <td>9:00 </td>
-            <th>Algoritmo y estructura de datos </th>
-            <th> Diseño y Analisis </th>
-            <th>Algoritmo y estructura de datos </th>
-            <th>Disarrollo Basado en Plataforma </th>
-            <th>  </th>
-        </tr>
-<tr>
-            <td>10:00 </td>
-            <th> </th>
-            <th> Diseño y Analisis </th>
-            <th> </th>
-            <th>Disarrollo Basado en Plataforma </th>
-            <th>  </th>
-        </tr>
-
-        <tr>
-            <td>11:00 </td>
-            <th> </th>
-            <th>Diseño y Analisis   </th>
-            <th></th>
-            <th> </th>
-            <th>  </th>
-        </tr>
-<tr>
-            <td>12:00 </td>
-            <th> </th>
-            <th>Diseño y Analisis   </th>
-            <th> </th>
-            <th> </th>
-            <th>  </th>
-        </tr>
-
-        <tr>
-            <td>1:00 </td>
-            <th> </th>
-            <th>  </th>
-            <th>Algebra lineal</th>
-            <th> </th>
-            <th>  </th>
-        </tr>
-
-        <tr>
-            <td>2:00 </td>
-            <th> </th>
-            <th>  </th>
-            <th>Algebra lineal</th>
-            <th> </th>
-            <th>  </th>
-        </tr>
-        
-        <tr>
-            <td>3:00 </td>
-            <th> </th>
-            <th>  </th>
-            <th>Algebra lineal</th>
-            <th> </th>
-            <th>  </th>
-        </tr>
-        
-        <tr>
-            <td>4:00 </td>
-            <th> </th>
-            <th>  </th>
-            <th>Algebra lineal</th>
-            <th> </th>
-            <th>  </th>
-        </tr>
-    </body>
+    <a class="saltar" href="#contenido">Saltar al contenido principal</a>
+    <header class="cabecera">
+        <div class="logos">
+            <img src="logo_universidad_utm.png" alt="Logo de la Universidad Técnica de Manabí" width="80" height="80">
+            <p class="sitio">Mi primer web</p>
+        </div>
+        <nav aria-label="Principal">
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Info.html">Información</a></li>
+                <li><a href="tabla.html" aria-current="page">Horario</a></li>
+                <li><a href="formulario.html">Formulario</a></li>
+                <li><a href="Leccion.html">Lección</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="contenido">
+        <h1>Horario de clases</h1>
+        <div class="tabla-desplazable" role="region" aria-label="Horario de clases, desplazable horizontalmente" tabindex="0">
+        <table>
+            <caption>Horario semanal de clases</caption>
+            <thead>
+                <tr><th scope="col">Hora</th><th scope="col">Lunes</th><th scope="col">Martes</th><th scope="col">Miércoles</th><th scope="col">Jueves</th><th scope="col">Viernes</th></tr>
+            </thead>
+            <tbody>
+                <tr><th scope="row">07:00</th><td>Algoritmo y estructura de datos</td><td></td><td>Algoritmo y estructura de datos</td><td>Desarrollo basado en plataformas</td><td></td></tr>
+                <tr><th scope="row">08:00</th><td>Algoritmo y estructura de datos</td><td></td><td>Algoritmo y estructura de datos</td><td>Desarrollo basado en plataformas</td><td></td></tr>
+                <tr><th scope="row">09:00</th><td>Algoritmo y estructura de datos</td><td>Diseño y análisis</td><td>Algoritmo y estructura de datos</td><td>Desarrollo basado en plataformas</td><td></td></tr>
+                <tr><th scope="row">10:00</th><td></td><td>Diseño y análisis</td><td></td><td>Desarrollo basado en plataformas</td><td></td></tr>
+                <tr><th scope="row">11:00</th><td></td><td>Diseño y análisis</td><td></td><td></td><td></td></tr>
+                <tr><th scope="row">12:00</th><td></td><td>Diseño y análisis</td><td></td><td></td><td></td></tr>
+                <tr><th scope="row">13:00</th><td></td><td></td><td>Álgebra lineal</td><td></td><td></td></tr>
+                <tr><th scope="row">14:00</th><td></td><td></td><td>Álgebra lineal</td><td></td><td></td></tr>
+                <tr><th scope="row">15:00</th><td></td><td></td><td>Álgebra lineal</td><td></td><td></td></tr>
+                <tr><th scope="row">16:00</th><td></td><td></td><td>Álgebra lineal</td><td></td><td></td></tr>
+            </tbody>
+        </table>
+        </div>
+    </main>
+    <footer class="patas">
+        <p>Desarrollo basado en plataformas · Universidad Técnica de Manabí</p>
+        <p><a href="https://www.utm.edu.ec/">Visitar el sitio de la Universidad Técnica de Manabí (misma ventana)</a></p>
+    </footer>
+</body>
 </html>

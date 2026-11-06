@@ -1,24 +1,384 @@
+/* Estilos del sitio "Mi primer web" - Tarea estándares W3C */
+:root {
+    --fondo: #f7f8f3;
+    --texto: #1a1a1a;
+    --enlace: #0a3d91;
+    --enlace-visitado: #5b1a8f;
+    --acento: #005a63;
+    --cabecera: #ffffff;
+    --nav: #e3e8ea;
+    --contenido: #eceeee;
+    --pie: #f3d9ae;
+    --borde: #5c5c5c;
+    --error: #8a0000;
+    --exito: #0b5a1c;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
 body {
-    background-color: rgb(247, 248, 243);
-}
-.Contenedor {
-    display: grid;
-    grid-template-rows: auto auto 300px auto;
+    margin: 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
 }
-.contenido{
-    display:grid;
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--enlace);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+a:visited {
+    color: var(--enlace-visitado);
+}
+
+a:hover {
+    text-decoration-thickness: 0.15em;
+}
+
+/* Foco visible (WCAG 2.4.7) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 0.1875rem solid #000;
+    outline-offset: 0.1875rem;
+    box-shadow: 0 0 0 0.375rem #fff;
+}
+
+/* Enlace para saltar al contenido */
+.saltar {
+    position: absolute;
+    left: 0.5rem;
+    top: -4rem;
+    z-index: 10;
+    padding: 0.75rem 1rem;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+}
+
+.saltar:focus {
+    top: 0.5rem;
+}
+
+/* Cabecera y navegación */
+.cabecera {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--cabecera);
+    border-bottom: 0.1875rem solid var(--acento);
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sitio {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--acento);
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a {
+    display: inline-block;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.875rem;
+    background-color: var(--nav);
+    border: 0.0625rem solid var(--borde);
+    border-radius: 0.25rem;
+    color: var(--enlace);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu a:visited {
+    color: var(--enlace);
+}
+
+.menu a[aria-current="page"] {
+    background-color: var(--acento);
+    border-color: var(--acento);
+    color: #fff;
+}
+
+/* Contenido principal */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 62.5rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+main:focus {
+    outline: none;
+}
+
+h1 {
+    margin-top: 0;
+    color: var(--acento);
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+h2 {
+    color: #2f018b;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.5rem;
+}
+
+h3 {
+    color: #1a1a1a;
+    font-size: 1.125rem;
+}
+
+.rejilla {
+    display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
-.ca{
-    background-color: white;
+
+.panel {
+    padding: 1rem;
+    background-color: var(--contenido);
+    border: 0.0625rem solid var(--borde);
+    border-radius: 0.5rem;
 }
-.Me{
-    background-color: Grey;
+
+.panel > h2:first-child {
+    margin-top: 0;
 }
-.li{
-    background-color:lightgrey;
+
+ol {
+    font-family: "Courier New", Courier, monospace;
+    color: #3b0b78;
 }
-.patas{
-    background-color: rgb(235, 169, 83);
+
+figure {
+    margin: 1rem 0 0;
+}
+
+figcaption {
+    font-size: 0.875rem;
+}
+
+/* Botones */
+.boton,
+button {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    border: 0.125rem solid var(--acento);
+    border-radius: 0.25rem;
+    background-color: var(--acento);
+    color: #fff;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003b41;
+}
+
+.mensaje {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-left: 0.375rem solid var(--acento);
+}
+
+/* Tablas */
+.tabla-desplazable {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 40rem;
+    background-color: #fff;
+}
+
+caption {
+    padding: 0.5rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 0.5rem;
+    border: 0.0625rem solid var(--borde);
+    text-align: left;
+}
+
+thead th,
+tbody th {
+    background-color: var(--nav);
+}
+
+/* Formulario */
+.campo {
+    margin-bottom: 1rem;
+}
+
+label,
+legend {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+}
+
+fieldset {
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    border: 0.0625rem solid var(--borde);
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+}
+
+.opcion label {
+    margin: 0;
+    font-weight: normal;
+}
+
+input[type="checkbox"] {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="url"],
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 30rem;
+    min-height: 2.75rem;
+    padding: 0.5rem;
+    border: 0.125rem solid var(--borde);
+    border-radius: 0.25rem;
+    background-color: #fff;
+    color: var(--texto);
+    font: inherit;
+}
+
+.ayuda {
+    margin: 0 0 0.25rem;
+    font-size: 0.875rem;
+}
+
+.error {
+    margin: 0.25rem 0 0;
+    color: var(--error);
+    font-weight: bold;
+}
+
+.error::before {
+    content: "Error: ";
+}
+
+[aria-invalid="true"] {
+    border-color: var(--error);
+    border-width: 0.1875rem;
+}
+
+.resumen-errores {
+    padding: 1rem;
+    border: 0.1875rem solid var(--error);
+    background-color: #fff;
+    color: var(--error);
+    font-weight: bold;
+}
+
+.exito {
+    padding: 1rem;
+    border: 0.1875rem solid var(--exito);
+    background-color: #fff;
+    color: var(--exito);
+    font-weight: bold;
+}
+
+/* Pie */
+.patas {
+    padding: 1rem;
+    background-color: var(--pie);
+    text-align: center;
+}
+
+.patas a,
+.patas a:visited {
+    color: #0a2f6b;
+}
+
+/* Diseño adaptable (WCAG 1.4.10) */
+@media (max-width: 48rem) {
+    .rejilla {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecera {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Enlaces que ocupan su propia línea: objetivo táctil mínimo (WCAG 2.5.8) */
+p > a:only-child,
+li > a:only-child {
+    display: inline-block;
+    min-height: 1.5rem;
+    padding-block: 0.25rem;
 }

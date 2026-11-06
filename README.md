@@ -1,5 +1,4 @@
-VS Code
-# Tarea_At-Est-ndares-W3C
-//primer commit se añadio el proyecto de la clase al repositorio.
+# Tarea: Estándares W3C
 
-
+Sitio "Mi primer web" revisado según HTML (Nu Checker), CSS, WCAG 2.2 AA, diseño adaptable e internacionalización.
+Sitio publicado: https://h-mendoza.github.io/Tarea_At-Est-ndares-W3C/

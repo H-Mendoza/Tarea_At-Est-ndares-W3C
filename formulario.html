@@ -1,30 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario de contacto | Mi primer web</title>
+    <link rel="stylesheet" href="Estilo.css">
+    <script src="codigo.js" defer></script>
 </head>
 <body>
-    <form name=" datos">
-        <input type="number" class="label" placeholder="Ingrese un numero(0-9)"> Number<br>
-        <input type="email"class="label" placeholder="Ingrese el correo"> E-mail<br>
-<input type="text" class="label" placeholder="ejemplo:Juan"> nombre<br>
-<input type="text" class ="label" placeholder ="ejemplo: Tandazo"> apellido <br>
-<input type="date" class=" label" placeholder="07-09-2007">fecha<br>
-<input type="url" class="label" placeholder="link: https://practica.com">pagina web<br>
-    <label style="color:rgb(255, 127, 244);align-items: center; "> Que estandares conoces?
-    </label><br>
-    <input type="checkbox" value="HTML5"> HTML5<br>
-    <input type="checkbox" value="CSS3"> CSS3<br>
-    <input type="checkbox" values ="JavaScrip"> JavaScrip <br>
-    <textarea cols="15" rows="8" class="label" placeholder="ingrese su informacion">  </textarea ><br>
-<input type="button" value="Enviar la informacion">   
-</form>
-<ul>
-    <li>Juljhancer Javier Cañarte Lozano</li>
-    <li>HUGO ENRIQUE MENDOZA COELLO</li>
-    <li> Edgar Samuel Tandazo Briones</li>
-</ul>
+    <a class="saltar" href="#contenido">Saltar al contenido principal</a>
+    <header class="cabecera">
+        <div class="logos">
+            <img src="logo_universidad_utm.png" alt="Logo de la Universidad Técnica de Manabí" width="80" height="80">
+            <p class="sitio">Mi primer web</p>
+        </div>
+        <nav aria-label="Principal">
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Info.html">Información</a></li>
+                <li><a href="tabla.html">Horario</a></li>
+                <li><a href="formulario.html" aria-current="page">Formulario</a></li>
+                <li><a href="Leccion.html">Lección</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="contenido">
+        <h1>Formulario de contacto</h1>
+        <p>Los campos marcados con asterisco (*) son obligatorios.</p>
+        <div id="resumen" class="resumen-errores" role="alert" hidden></div>
+        <form id="form-datos" action="formulario.html" method="get">
+            <div class="campo">
+                <label for="numero">Número del 0 al 9 *</label>
+                <p class="ayuda" id="numero-ayuda">Ejemplo: 5</p>
+                <input type="number" id="numero" name="numero" min="0" max="9" step="1" required aria-describedby="numero-error numero-ayuda">
+                <p class="error" id="numero-error"></p>
+            </div>
+            <div class="campo">
+                <label for="correo">Correo electrónico *</label>
+                <p class="ayuda" id="correo-ayuda">Ejemplo: nombre@dominio.com</p>
+                <input type="email" id="correo" name="correo" autocomplete="email" required aria-describedby="correo-error correo-ayuda">
+                <p class="error" id="correo-error"></p>
+            </div>
+            <div class="campo">
+                <label for="nombre">Nombre *</label>
+                <p class="ayuda" id="nombre-ayuda">Ejemplo: Juan</p>
+                <input type="text" id="nombre" name="nombre" autocomplete="given-name" required aria-describedby="nombre-error nombre-ayuda">
+                <p class="error" id="nombre-error"></p>
+            </div>
+            <div class="campo">
+                <label for="apellido">Apellido *</label>
+                <p class="ayuda" id="apellido-ayuda">Ejemplo: Tandazo</p>
+                <input type="text" id="apellido" name="apellido" autocomplete="family-name" required aria-describedby="apellido-error apellido-ayuda">
+                <p class="error" id="apellido-error"></p>
+            </div>
+            <div class="campo">
+                <label for="fecha">Fecha *</label>
+                <input type="date" id="fecha" name="fecha" required aria-describedby="fecha-error">
+                <p class="error" id="fecha-error"></p>
+            </div>
+            <div class="campo">
+                <label for="web">Página web (opcional)</label>
+                <p class="ayuda" id="web-ayuda">Ejemplo: https://practica.com</p>
+                <input type="url" id="web" name="web" autocomplete="url" aria-describedby="web-ayuda">
+            </div>
+            <fieldset>
+                <legend>¿Qué estándares conoces?</legend>
+                <div class="opcion"><input type="checkbox" id="std-html" name="estandares" value="HTML5"><label for="std-html">HTML5</label></div>
+                <div class="opcion"><input type="checkbox" id="std-css" name="estandares" value="CSS3"><label for="std-css">CSS3</label></div>
+                <div class="opcion"><input type="checkbox" id="std-js" name="estandares" value="JavaScript"><label for="std-js">JavaScript</label></div>
+            </fieldset>
+            <div class="campo">
+                <label for="info">Información adicional</label>
+                <textarea id="info" name="info" cols="30" rows="6"></textarea>
+            </div>
+            <button type="submit">Enviar la información</button>
+        </form>
+        <div id="estado" role="status"></div>
+        <section aria-labelledby="t-autores">
+            <h2 id="t-autores">Autores</h2>
+            <ul>
+                <li>Juljhancer Javier Cañarte Lozano</li>
+                <li>Hugo Enrique Mendoza Coello</li>
+                <li>Edgar Samuel Tandazo Briones</li>
+            </ul>
+        </section>
+    </main>
+    <footer class="patas">
+        <p>Desarrollo basado en plataformas · Universidad Técnica de Manabí</p>
+        <p><a href="https://www.utm.edu.ec/">Visitar el sitio de la Universidad Técnica de Manabí (misma ventana)</a></p>
+    </footer>
 </body>
 </html>

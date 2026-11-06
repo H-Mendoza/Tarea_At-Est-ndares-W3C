@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Información | Mi primer web</title>
+    <link rel="stylesheet" href="Estilo.css">
+    <script src="codigo.js" defer></script>
 </head>
 <body>
-<h1> Estimado usuario usted esta en la informacion</h1>
-<h3> de momento se encuentra vacio</h3>
+    <a class="saltar" href="#contenido">Saltar al contenido principal</a>
+    <header class="cabecera">
+        <div class="logos">
+            <img src="logo_universidad_utm.png" alt="Logo de la Universidad Técnica de Manabí" width="80" height="80">
+            <p class="sitio">Mi primer web</p>
+        </div>
+        <nav aria-label="Principal">
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Info.html" aria-current="page">Información</a></li>
+                <li><a href="tabla.html">Horario</a></li>
+                <li><a href="formulario.html">Formulario</a></li>
+                <li><a href="Leccion.html">Lección</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="contenido">
+        <h1>Información</h1>
+        <p>Estimado usuario, usted está en la página de información. De momento se encuentra vacía.</p>
+    </main>
+    <footer class="patas">
+        <p>Desarrollo basado en plataformas · Universidad Técnica de Manabí</p>
+        <p><a href="https://www.utm.edu.ec/">Visitar el sitio de la Universidad Técnica de Manabí (misma ventana)</a></p>
+    </footer>
 </body>
 </html>
