@@ -11,14 +11,14 @@ body {
     grid-template-columns: 1fr 1fr;
 }
 .ca{
-    background-color: brown;
+    background-color: white;
 }
 .Me{
-    background-color: chocolate;
+    background-color: Grey;
 }
 .li{
-    background-color:darkred;
+    background-color:lightgrey;
 }
 .patas{
-    background-color:hotpink;
+    background-color: rgb(235, 169, 83);
 }
